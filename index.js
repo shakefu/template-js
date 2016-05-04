@@ -44,7 +44,7 @@ Template.prototype.getTemplate = function getTemplate (tmpl) {
 }
 
 Template.prototype.render = function render (tmpl, indent) {
-    name = tmpl
+    let name = tmpl
     // Get the template
     tmpl = this.getTemplate(tmpl)
     try { 
