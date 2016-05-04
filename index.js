@@ -29,16 +29,34 @@ function Template (filename, context) {
 }
 
 Template.prototype.getTemplate = function getTemplate (tmpl) {
+    // Check if it's cached
     if (!this.cache[tmpl]) {
-        this.cache[tmpl] = template(fs.readFileSync(tmpl), settings)
+        try {
+            // Try to load it from the filesystem
+            this.cache[tmpl] = template(fs.readFileSync(tmpl), settings)
+        }
+        catch (err) {
+            throw new Error("Error compiling template '" + tmpl + "': " + err)
+        }
     }
+    // Return the cached template
     return this.cache[tmpl]
 }
 
 Template.prototype.render = function render (tmpl, indent) {
+    name = tmpl
+    // Get the template
     tmpl = this.getTemplate(tmpl)
-    tmpl = tmpl(this.context)
+    try { 
+        // Try to render it
+        tmpl = tmpl(this.context)
+    }
+    catch (err) {
+        throw new Error("Error rendering template '" + name + "': " + err)
+    }
+    // Trim trailing whitespace
     tmpl = tmpl.replace(/\n$/, '')
+    // Indent the whole thing if wanted
     if (indent) {
         indent = '                                           '.slice(0, indent)
         tmpl = tmpl.replace(/^/, indent)
