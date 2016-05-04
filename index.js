@@ -35,15 +35,19 @@ Template.prototype.getTemplate = function getTemplate (tmpl) {
     return this.cache[tmpl]
 }
 
-Template.prototype.render = function render (tmpl, context) {
-    if (context) this.context = context
+Template.prototype.render = function render (tmpl, indent) {
     tmpl = this.getTemplate(tmpl)
     tmpl = tmpl(this.context)
     tmpl = tmpl.replace(/\n$/, '')
+    if (indent) {
+        indent = '                                           '.slice(0, indent)
+        tmpl = tmpl.replace(/^/, indent)
+    }
     return tmpl
 }
 
-Template.prototype.toString = function toString () {
+Template.prototype.toString = function toString (context) {
+    if (context) this.context = context
     return this.render(this.filename)
 }
 
