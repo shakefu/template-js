@@ -1,0 +1,29 @@
+{
+  "name": "template-js",
+  "version": "1.0.0",
+  "description": "Simple and Easy Templates for Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shakefu/template-js.git"
+  },
+  "keywords": [
+    "template",
+    "file",
+    "string",
+    "easy",
+    "simple"
+  ],
+  "author": "Jake Alheid <shakefu@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shakefu/template-js/issues"
+  },
+  "homepage": "https://github.com/shakefu/template-js#readme",
+  "dependencies": {
+    "lodash.template": "^4.2.4"
+  }
+}
