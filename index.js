@@ -36,7 +36,7 @@ Template.prototype.getTemplate = function getTemplate (tmpl) {
             this.cache[tmpl] = template(fs.readFileSync(tmpl), settings)
         }
         catch (err) {
-            throw new Error("Error compiling template '" + tmpl + "': " + err)
+            throw new Error("Error compiling template '" + tmpl + "':\n" + err)
         }
     }
     // Return the cached template
@@ -52,7 +52,7 @@ Template.prototype.render = function render (tmpl, indent) {
         tmpl = tmpl(this.context)
     }
     catch (err) {
-        throw new Error("Error rendering template '" + name + "': " + err)
+        throw new Error("Error rendering template '" + name + "':\n" + err)
     }
     // Trim trailing whitespace
     tmpl = tmpl.replace(/\n$/, '')
