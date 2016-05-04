@@ -16,7 +16,9 @@ var Template = require('template-js')
 var my_template = new Template('my.tmpl', {text: "<h1>Hello World</h1>"})
 
 console(my_template.toString())
+```
 
+```js
 // my.tmpl
 
 This is a template.
