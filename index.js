@@ -4,6 +4,7 @@ var fs = require('fs')
 
 // 3rd Party
 var template = require('lodash.template')
+var forEach = require('lodash.foreach')
 
 // Rendering settings
 var settings = {
@@ -20,6 +21,7 @@ function Template (filename, context) {
     // Save the context for reuse in sub-templates
     this.context = context || {}
     this.context.include = this.render.bind(this)
+    this.context.forEach = forEach
 
     // Save the filename for the initial render
     this.filename = filename
