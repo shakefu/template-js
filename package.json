@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/shakefu/template-js#readme",
   "dependencies": {
+    "lodash.foreach": "^4.2.0",
     "lodash.template": "^4.2.4"
   },
   "devDependencies": {
