@@ -4,7 +4,7 @@
   "description": "Simple and Easy Templates for Node.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,8 @@
   "homepage": "https://github.com/shakefu/template-js#readme",
   "dependencies": {
     "lodash.template": "^4.2.4"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5"
   }
 }
