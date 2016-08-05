@@ -64,7 +64,7 @@ Template.prototype.render = function render (tmpl, indent) {
         spaces = spaces.slice(0, indent)
         tmpl = tmpl.replace(/^/gm, spaces)
         // Strip the initial indent since we presume the thing is indented
-        tmpl = tmpl.slice(indent - 1)
+        tmpl = tmpl.slice(indent)
     }
     return tmpl
 }
