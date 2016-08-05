@@ -61,9 +61,10 @@ Template.prototype.render = function render (tmpl, indent) {
     // Indent the whole thing if wanted
     if (indent) {
         indent = '                                           '.slice(0, indent)
-        tmpl = tmpl.replace(/^/, indent)
+        tmpl = tmpl.replace(/^/gm, indent)
     }
-    return tmpl
+    // Strip the initial indent since we presume the thing is indented
+    return tmpl.slice(4)
 }
 
 Template.prototype.toString = function toString (context) {
