@@ -60,10 +60,11 @@ Template.prototype.render = function render (tmpl, indent) {
     tmpl = tmpl.replace(/\n$/, '')
     // Indent the whole thing if wanted
     if (indent) {
-        indent = '                                           '.slice(0, indent)
-        tmpl = tmpl.replace(/^/gm, indent)
+        let spaces = '                                                        '
+        spaces = spaces.slice(0, indent)
+        tmpl = tmpl.replace(/^/gm, spaces)
         // Strip the initial indent since we presume the thing is indented
-        tmpl = tmpl.slice(indent)
+        tmpl = tmpl.slice(indent - 1)
     }
     return tmpl
 }
