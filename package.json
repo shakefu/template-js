@@ -1,6 +1,6 @@
 {
   "name": "template-js",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Simple and Easy Templates for Node.js",
   "main": "index.js",
   "scripts": {
